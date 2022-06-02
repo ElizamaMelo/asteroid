@@ -1,8 +1,16 @@
 package com.asteroid.model;
 
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AsteroidResponse {
 
     private String name;
@@ -11,46 +19,4 @@ public class AsteroidResponse {
     private LocalDate date;
     private String planet;
 
-    public AsteroidResponse() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getDiametre() {
-        return diametre;
-    }
-
-    public void setDiametre(BigDecimal diametre) {
-        this.diametre = diametre;
-    }
-
-    public Double getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(Double speed) {
-        this.speed = speed;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getPlanet() {
-        return planet;
-    }
-
-    public void setPlanet(String planet) {
-        this.planet = planet;
-    }
 }

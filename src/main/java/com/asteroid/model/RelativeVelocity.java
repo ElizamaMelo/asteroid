@@ -1,14 +1,17 @@
 package com.asteroid.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class RelativeVelocity {
 
-    private Double kilometers_per_hour;
+    @JsonProperty("kilometers_per_hour")
+    private Double kilometersPerHour;
 
-    public Double getKilometers_per_hour() {
-        return kilometers_per_hour;
-    }
-
-    public void setKilometers_per_hour(Double kilometers_per_hour) {
-        this.kilometers_per_hour = kilometers_per_hour;
-    }
 }

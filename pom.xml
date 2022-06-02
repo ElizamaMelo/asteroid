@@ -16,6 +16,7 @@
     <properties>
         <java.version>1.8</java.version>
         <swagger.version>3.0.0</swagger.version>
+        <projectlombok.version>1.18.16</projectlombok.version>
     </properties>
     <dependencies>
         <dependency>
@@ -38,6 +39,12 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${projectlombok.version}</version>
         </dependency>
     </dependencies>
 

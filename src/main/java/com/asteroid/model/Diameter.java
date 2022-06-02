@@ -1,14 +1,15 @@
 package com.asteroid.model;
 
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Diameter {
 
     private Kilometers kilometers;
 
-    public Kilometers getKilometers() {
-        return kilometers;
-    }
-
-    public void setKilometers(Kilometers kilometers) {
-        this.kilometers = kilometers;
-    }
 }
