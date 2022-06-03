@@ -26,7 +26,6 @@ public class SwaggerConfiguration {
         }
     }
 
-
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder()
                 .title("Asteroid API")
