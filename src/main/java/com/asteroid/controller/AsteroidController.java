@@ -2,6 +2,11 @@ package com.asteroid.controller;
 
 import com.asteroid.model.AsteroidResponse;
 import com.asteroid.service.AsteroidService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +26,17 @@ public class AsteroidController {
         this.asteroidService = asteroidService;
     }
 
+    @ApiOperation(value = "Finding the 3 closest asteroids to a planet")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Success"),
+            @ApiResponse(code = 404, message = "Not found"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 401, message = "Unauthorized")
+    })
     @GetMapping("/info/{asteroidId}")
-    public List<AsteroidResponse> getPlanetInfo(@PathVariable @Validated String asteroidId) throws ValidationException {
-        return asteroidService.getATop3Asteroid(asteroidId);
+    public ResponseEntity<List<AsteroidResponse>> getTopThreeAsteroidsById(@PathVariable @Validated String asteroidId) throws ValidationException {
+        return new ResponseEntity<>(asteroidService.getTopThreeAsteroids(asteroidId), HttpStatus.OK);
+
     }
 
 }

@@ -45,7 +45,7 @@ public class AsteroidService {
     }
 
 
-    public List<AsteroidResponse> getATop3Asteroid(String asteroidId) throws ValidationException {
+    public List<AsteroidResponse> getTopThreeAsteroids(String asteroidId) throws ValidationException {
         log.info("Finding 3 largest asteroids with potential impact risk");
 
         Asteroid asteroid = getAsteroid(asteroidId);
@@ -57,6 +57,8 @@ public class AsteroidService {
             throw new ValidationException("Asteroid is not potentially hazardous.");
         } else {
             BigDecimal medio = calculateDiametre(asteroid);
+
+
             asteroid.getCloseApproachData().forEach(a -> {
 
                 AsteroidResponse response = new AsteroidResponse();
@@ -79,7 +81,7 @@ public class AsteroidService {
         return top3;
     }
 
-    private BigDecimal calculateDiametre(Asteroid asteroid) {
+    public BigDecimal calculateDiametre(Asteroid asteroid) {
 
         BigDecimal result = null;
         if (asteroid.getEstimatedDiameter() != null) {

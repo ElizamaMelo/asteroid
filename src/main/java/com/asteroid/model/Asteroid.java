@@ -1,7 +1,6 @@
 package com.asteroid.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
 import java.util.List;
@@ -13,6 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Asteroid {
+
+    @JsonProperty("neo_reference_id")
+    private String neoReferenceId;
 
     @JsonProperty("is_potentially_hazardous_asteroid")
     private Boolean isPotentiallyHazardousAsteroid;
